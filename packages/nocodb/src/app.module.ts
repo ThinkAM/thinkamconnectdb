@@ -27,6 +27,7 @@ import type {
   MiddlewareConsumer,
   OnApplicationBootstrap,
 } from '@nestjs/common';
+import { AppHooksListenerService } from './services/app-hooks-listener.service';
 
 @Module({
   imports: [
@@ -48,6 +49,7 @@ import type {
     AuthTokenStrategy,
     BaseViewStrategy,
     HookHandlerService,
+    AppHooksListenerService,
   ],
 })
 export class AppModule implements OnApplicationBootstrap {
