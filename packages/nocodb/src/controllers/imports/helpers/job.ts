@@ -417,6 +417,7 @@ export default async (
     if (sampleProj) {
       await projectService.projectSoftDelete({
         projectId: sampleProj.id,
+        user: syncDB.user,
       });
     }
     logDetailed('Init');
@@ -699,6 +700,7 @@ export default async (
       await viewService.viewUpdate({
         viewId: view.list[0].id,
         view: { title: aTbl_grid.name },
+        user: syncDB.user,
       });
       recordPerfStats(_perfStart, 'dbView.update');
 
